@@ -59,6 +59,8 @@ public class Login extends HttpServlet {
 					else
 					{
 						out.println("Wrong Password");
+						RequestDispatcher rd = request.getRequestDispatcher("Index.html");
+						rd.include(request, response);
 					}
 					}
 		

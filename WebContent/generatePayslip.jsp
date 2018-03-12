@@ -12,32 +12,21 @@ String name = (String)session.getAttribute("name");
 out.print(name);%></title>
 </head>
 
-   <body>
+<body>
+<h1>Choose Employee</h1>
+<form action="getPayment" method="get">
       <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
          url = "jdbc:mysql://localhost/campus_security"
          user = "root"  password = "toor"/>
- 
       <sql:query dataSource = "${snapshot}" var = "result">
-         SELECT id,username,type from campus;
+         SELECT username from employee;
       </sql:query>
- 
-      <table border = "1" width = "100%">
-         <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Type</th>
-         </tr>
-         
-         <c:forEach var = "row" items = "${result.rows}">
-            <tr>
-               <td><c:out value = "${row.id}"/></td>
-               <td><c:out value = "${row.username}"/></td>
-               <td><c:out value = "${row.type}"/></td>
-            </tr>
-         </c:forEach>
-      </table>
-      <form action="Manager.jsp">
-    <input type="submit" value="Back" />
+      <select name="username">
+      <c:forEach var = "row" items = "${result.rows}">
+      <option value='${row.username}' >${row.username}</option>
+      </c:forEach>
+      </select>
+<input type="submit" value="Get Payment">
 </form>
-   </body>
+</body>
 </html>

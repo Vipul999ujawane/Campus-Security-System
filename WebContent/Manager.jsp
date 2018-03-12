@@ -16,6 +16,11 @@ out.print(name);%></title>
 <form action="setDuty.jsp" method="post">
     <input type="submit" value="Set Duty">
 </form>
-
+<form action="generatePayslip.jsp" method="post">
+    <input type="submit" value="Generate Payslip">
+</form>
+<form action="getRequests.jsp" method="post">
+	<input type="submit" value="Get Requests">
+</form>
 </body>
 </html>

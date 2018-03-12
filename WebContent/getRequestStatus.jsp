@@ -18,21 +18,23 @@ out.print(name);%></title>
          user = "root"  password = "toor"/>
  
       <sql:query dataSource = "${snapshot}" var = "result">
-         SELECT id,username,type from campus;
+         SELECT day, stat from request WHERE employee=? <sql:param value ='<%= session.getAttribute("name") %>' />
       </sql:query>
  
       <table border = "1" width = "100%">
          <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Type</th>
+            <th>Day</th>
+            <th>Status</th>
+            <th>Action</th>
          </tr>
          
          <c:forEach var = "row" items = "${result.rows}">
-            <tr>
-               <td><c:out value = "${row.id}"/></td>
-               <td><c:out value = "${row.username}"/></td>
-               <td><c:out value = "${row.type}"/></td>
+        	 <tr>
+        	   <form action="Delete" method="post">
+               <td><input type="hidden" name="day" value="${row.day}"/>${row.day}</td>
+               <td><input type="hidden" name="status" value="${row.stat}"/>${row.stat}</td>
+               <td><input type="submit" name="action" value="Delete Request"/>
+               </form>
             </tr>
          </c:forEach>
       </table>

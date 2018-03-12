@@ -9,7 +9,7 @@
 <title>Welcome 
 <% session = request.getSession(false);
 String name = (String)session.getAttribute("name"); 
-out.print(name);%>></title>
+out.print(name);%></title>
 </head>
 
    <body>
@@ -18,7 +18,7 @@ out.print(name);%>></title>
          user = "root"  password = "toor"/>
  
       <sql:query dataSource = "${snapshot}" var = "result">
-         SELECT * from employee WHERE username='name';
+         SELECT * from employee WHERE username=? <sql:param value ='<%= session.getAttribute("name") %>' />
       </sql:query>
  
       <table border = "1" width = "100%">
@@ -34,7 +34,7 @@ out.print(name);%>></title>
             </tr>
             <tr>
                <td><c:out value = "Tuesday"/></td>
-               <td><c:out value = "${row.tueday}"/></td>
+               <td><c:out value = "${row.tuesday}"/></td>
             </tr>
             <tr>
                <td><c:out value = "Wednesday"/></td>
@@ -49,7 +49,7 @@ out.print(name);%>></title>
                <td><c:out value = "${row.friday}"/></td>
             </tr>
             <tr>
-               <td><c:out value = "saturday"/></td>
+               <td><c:out value = "Saturday"/></td>
                <td><c:out value = "${row.saturday}"/></td>
             </tr>
             <tr>

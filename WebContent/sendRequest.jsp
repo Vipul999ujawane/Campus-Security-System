@@ -10,16 +10,18 @@ String name = (String)session.getAttribute("name");
 out.print(name);%>></title>
 </head>
 <body>
-<h1>Welcome 
-<%out.print(name);%></h1>
-<form action="ShowDuty.jsp" method="post">
-<input type="submit" value="Show Duty"/>
-</form>
-<form action="sendRequest.jsp" method="post">
-<input type="submit" value="Request Leave"/>
-</form>
-<form action="getRequestStatus.jsp" method="post">
-<input type="submit" value="Get Request Status"/>
+<H1>Choose Day of Leave</H1>
+<form action="GenerateRequest" method="post">
+<select name="day">
+<option value="monday">Monday</option>
+<option value="tuesday">Tuesday</option>
+<option value="wednesday">Wednesday</option>
+<option value="thursday">Thursday</option>
+<option value="friday">Friday</option>
+<option value="saturday">Saturday</option>
+<option value="sunday">Sunday</option>
+</select>
+<input type="submit" value="Send Request"/>
 </form>
 </body>
 </html>

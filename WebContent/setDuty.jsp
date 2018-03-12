@@ -11,7 +11,7 @@
 <title>Welcome 
 <% session = request.getSession(false);
 String name = (String)session.getAttribute("name"); 
-out.print(name);%>></title>
+out.print(name);%></title>
 </head>
 <body>
 <h1>Enter Shift number</h1>
