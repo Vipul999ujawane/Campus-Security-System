@@ -21,5 +21,9 @@ out.print(name);%>></title>
 <form action="getRequestStatus.jsp" method="post">
 <input type="submit" value="Get Request Status"/>
 </form>
+<form action="Logout" method="post">
+<input type="submit" value="Logout"/>
+</form>
+
 </body>
 </html>

@@ -49,6 +49,24 @@ out.print(name);%></title>
          <input type="submit" value="update"/>
          </form>
       </table>
+<h1>Accepted Requests</h1>
+      <sql:query dataSource = "${snapshot}" var = "result2">
+         SELECT employee, day from request WHERE stat='APP'
+      </sql:query>
+ 
+      <table border = "1" width = "100%">
+         <tr>
+            <th>Employee</th>
+            <th>Day</th>
+         </tr>
+         
+         <c:forEach var = "row2" items = "${result2.rows}">
+        	 <tr>
+               <td>${row2.employee}</td>
+               <td>${row2.day}</td>
+            </tr>
+         </c:forEach>
+      </table>
 
 </body>
 </html>

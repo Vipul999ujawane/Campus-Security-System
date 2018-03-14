@@ -52,7 +52,6 @@ public class ConfirmDuty extends HttpServlet {
 			stmt.setString(7, request.getParameter(oneEmp+"+sunday"));
 			stmt.setString(8, oneEmp);
 			stmt.executeUpdate();
-			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

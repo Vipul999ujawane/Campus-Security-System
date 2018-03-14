@@ -30,7 +30,7 @@ out.print(name);%></title>
          
          <c:forEach var = "row" items = "${result.rows}">
         	 <tr>
-        	   <form action="Delete" method="post">
+        	   <form action="DeleteRequest" method="post">
                <td><input type="hidden" name="day" value="${row.day}"/>${row.day}</td>
                <td><input type="hidden" name="status" value="${row.stat}"/>${row.stat}</td>
                <td><input type="submit" name="action" value="Delete Request"/>
